@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Número Secreto</title>
+
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <div class="cabeçalho">
+        <h1>DESAFIO NÚMERO SECRETO</h1>
+    </div>
+
+    <div class="teste">
+        <p><label for="desafio">Digite um número de 0 a 10:</label></p>
+        <input type="number" class=chute>
+        <input type="button" value="OK" class="botao" onclick="verificar()">  
+    </div>
+
+    <div id="resultado"></div>
+
+    <script>
+        function verificar(){
+            var numeroSecreto = 7
+            var palpite = window.document.querySelector('input.chute')
+            var resposta = window.document.getElementById('resultado')
+
+            var xute = parseInt(palpite.value)
+
+            resposta.innerHTML = `<p>Você chutou o número ${xute}.`
+
+            if (numeroSecreto == xute) {
+                resposta.innerHTML += '<p>Parabéns, você acertou!</p>'
+            } else if (numeroSecreto > xute) {
+                resposta.innerHTML += '<p>O palpite está baixo!</p>'
+            } else {
+                resposta.innerHTML += '<p>O palpite está alto!</p>'
+            }
+        }
+    </script>
+</body>
+</html>
